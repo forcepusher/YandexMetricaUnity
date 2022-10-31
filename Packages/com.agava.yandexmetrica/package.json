@@ -1,0 +1,16 @@
+{
+  "name": "com.agava.yandexgames",
+  "version": "1.0.0",
+  "displayName": "Yandex Metrica",
+  "type": "library",
+  "unity": "2020.3",
+  "description": "Yandex Metrica Unity SDK for the WebGL platform.",
+  "license": "MIT",
+  "samples": [
+    {
+      "displayName": "Playtesting Sample",
+      "description": "Contains sample for uploading to Yandex Metrica.",
+      "path": "Samples~/Playtesting"
+    }
+  ]
+}
