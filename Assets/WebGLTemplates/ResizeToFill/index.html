@@ -19,7 +19,7 @@
         trackLinks:true,
         accurateTrackBounce:true
     });
-    ym(89587935,'reachGoal','page-opened');
+    ym(89587935,'reachGoal','page-open');
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/89587935" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
@@ -34,8 +34,6 @@
 
   <script src="Build/{{{ LOADER_FILENAME }}}"></script>
   <script>
-    ym(89587935,'reachGoal','page-loaded');
-
     const settings = {
       dataUrl: "Build/{{{ DATA_FILENAME }}}",
       frameworkUrl: "Build/{{{ FRAMEWORK_FILENAME }}}",
@@ -59,12 +57,11 @@
     const progressBar = document.querySelector("#progress-bar");
 
     setTimeout(() => {
-      ym(89587935,'reachGoal','unity-loading');
       createUnityInstance(document.querySelector("#unity-canvas"), settings, (progress) => {
         progressBar.style.right = 100 * (1 - progress) + "%";
       }).then(() => {
         progressBar.style.display = "none";
-        ym(89587935,'reachGoal','unity-started');
+        ym(89587935,'reachGoal','unity-start');
       }).catch((message) => {
         alert(message);
       });
