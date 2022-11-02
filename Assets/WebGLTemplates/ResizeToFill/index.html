@@ -56,8 +56,8 @@
 
     const progressBar = document.querySelector("#progress-bar");
 
-    const pageLoadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-    ym(89587935,'reachGoal','page-load', { time: pageLoadTime });
+    const pageLoadTime = performance.timing.loadEventStart - performance.timing.navigationStart;
+    ym(89587935,'reachGoal','page-load', { time: pageLoadTime / 1000 });
 
     const unityStartLoadingTime = performance.now();
     setTimeout(() => {
@@ -66,7 +66,7 @@
       }).then(() => {
         progressBar.style.display = "none";
         const unityEndLoadingTime = performance.now();
-        ym(89587935,'reachGoal','unity-start', { time: unityEndLoadingTime - unityStartLoadingTime });
+        ym(89587935,'reachGoal','unity-start', { time: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
       }).catch((message) => {
         alert(message);
       });
