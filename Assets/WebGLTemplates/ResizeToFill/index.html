@@ -20,11 +20,11 @@
         accurateTrackBounce:true
     });
 
-    ym(89587935,'reachGoal','page-open');
-    
+    ym(89587935,'reachGoal','pageOpen');
+
     addEventListener('DOMContentLoaded', (event) => {
       const pageLoadTime = performance.timing.domContentLoadedEventStart - performance.timing.navigationStart;
-      ym(89587935,'reachGoal','page-load', { time: pageLoadTime / 1000 });
+      ym(89587935,'reachGoal','pageLoad', { pageLoadTime: pageLoadTime / 1000 });
     });
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/89587935" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -69,7 +69,7 @@
       }).then(() => {
         progressBar.style.display = "none";
         const unityEndLoadingTime = performance.now();
-        ym(89587935,'reachGoal','unity-start', { time: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
+        ym(89587935,'reachGoal','unityStart', { unityLoadTime: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
       }).catch((message) => {
         alert(message);
       });
