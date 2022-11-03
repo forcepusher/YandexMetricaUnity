@@ -21,10 +21,9 @@
     });
 
     ym(89587935,'reachGoal','page-open');
-
+    
     addEventListener('DOMContentLoaded', (event) => {
-      const pageLoadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
-      console.log(performance.timing.domContentLoadedEventEnd + " " + performance.timing.navigationStart);
+      const pageLoadTime = performance.timing.domContentLoadedEventStart - performance.timing.navigationStart;
       ym(89587935,'reachGoal','page-load', { time: pageLoadTime / 1000 });
     });
   </script>
