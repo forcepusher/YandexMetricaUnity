@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.agava.yandexgames": {
+    "com.agava.yandexmetrica": {
       "version": "file:com.agava.yandexmetrica",
       "depth": 0,
       "source": "embedded",
