@@ -4,10 +4,7 @@ const library = {
 
   $yandexMetrica: {
     yandexMetricaSend: function (eventName, eventData, successCallbackPtr) {
-      const stringBufferSize = lengthBytesUTF8(string) + 1;
-      const stringBufferPtr = _malloc(stringBufferSize);
-      stringToUTF8(string, stringBufferPtr, stringBufferSize);
-      return stringBufferPtr;
+      ym(89587935,'reachGoal',eventName, JSON.parse(eventData));
     },
   },
 
