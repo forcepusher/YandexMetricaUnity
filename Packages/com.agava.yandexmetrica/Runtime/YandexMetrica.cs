@@ -5,6 +5,11 @@ namespace Agava.YandexMetrica
 {
     public static class YandexMetrica
     {
+        public static void Send(string eventName)
+        {
+            YandexMetricaSend(eventName, string.Empty);
+        }
+
         public static void Send(string eventName, string eventDataJson)
         {
             YandexMetricaSend(eventName, eventDataJson);

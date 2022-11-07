@@ -4,7 +4,8 @@ const library = {
 
   $yandexMetrica: {
     yandexMetricaSend: function (eventName, eventData) {
-      ym(window.yandexMetricaCounterId,'reachGoal', eventName, JSON.parse(eventData));
+      const eventDataJson = eventData === '' ? undefined : JSON.parse(eventData);
+      ym(window.yandexMetricaCounterId, 'reachGoal', eventName, eventDataJson);
     },
   },
 
