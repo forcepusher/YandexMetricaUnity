@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlaytestingCanvas : MonoBehaviour
+namespace Agava.YandexMetrica.Samples
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlaytestingCanvas : MonoBehaviour
     {
-        
-    }
+        [SerializeField]
+        private InputField _eventNameField;
+        [SerializeField]
+        private InputField _eventDataField;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void OnSendButtonClick()
+        {
+            YandexMetrica.Send(_eventNameField.text, _eventDataField.text);
+        }
     }
 }
