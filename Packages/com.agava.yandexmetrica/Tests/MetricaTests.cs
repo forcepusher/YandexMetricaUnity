@@ -8,8 +8,14 @@ namespace Agava.YandexMetrica.Tests
         [Test]
         public void ShouldNotThrow()
         {
-            // YandexMetrica.Send()
-            // Check all 3 overloads. Empty and non empty data.
+            YandexMetrica.Send("asdasd");
+            YandexMetrica.Send("fdgdfg", new TestData());
+            YandexMetrica.Send("asdasd", "{\"SomeString\": \"asdasdstringlol\"}");
+        }
+
+        public class TestData
+        {
+            public int SomeNumber = 42;
         }
     }
 }
