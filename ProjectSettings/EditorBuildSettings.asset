@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Packages/com.agava.yandexmetrica/Samples/Playtesting/PlaytestingScene.unity
+    path: Packages/com.agava.yandexmetrica/~Samples/Playtesting/PlaytestingScene.unity
     guid: 8b577d8dcd838fe4ba0c812a9c7efdb6
   m_configObjects: {}
