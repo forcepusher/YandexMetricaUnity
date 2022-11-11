@@ -77,6 +77,8 @@
         const unityEndLoadingTime = performance.now();
         ym(window.yandexMetricaCounterId,'reachGoal','unityStart', { unityLoadTime: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
       }).catch((message) => {
+        const unityCrashTime = performance.now();
+        ym(window.yandexMetricaCounterId,'reachGoal','crash', { crashPlaytime: (unityCrashTime - unityStartLoadingTime) / 1000 });
         alert(message);
       });
     }, 500); // Wait half a second before loading. Makes page more responsive on reload.
