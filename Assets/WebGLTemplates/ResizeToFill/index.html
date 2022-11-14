@@ -74,15 +74,16 @@
       createUnityInstance(document.querySelector("#unity-canvas"), settings, (progress) => {
         progressBar.style.right = 100 * (1 - progress) + "%";
       }).then((unityInstance) => {
-        console.log(unityInstance);
-
         progressBar.style.display = "none";
         unityEndLoadingTime = performance.now();
+        unityInstance.Module.errorHandler = (errorMessage) => {
+          const unityCrashTime = performance.now();
+          const unityCrashPlaytime = unityEndLoadingTime === 0 ? 0 : (unityCrashTime - unityEndLoadingTime) / 1000;
+          ym(window.yandexMetricaCounterId, 'reachGoal', 'unityGameCrash', { unityCrashPlaytime: unityCrashPlaytime });
+        };
         ym(window.yandexMetricaCounterId,'reachGoal','unityStart', { unityLoadTime: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
       }).catch((message) => {
-        const unityCrashTime = performance.now();
-        const unityCrashPlaytime = unityEndLoadingTime === 0 ? 0 : (unityCrashTime - unityEndLoadingTime) / 1000;
-        ym(window.yandexMetricaCounterId,'reachGoal','unityLoadingCrash', { unityCrashPlaytime: unityCrashPlaytime });
+        ym(window.yandexMetricaCounterId, 'reachGoal', 'unityLoadingCrash');
         alert(message);
       });
     }, 500); // Wait half a second before loading. Makes page more responsive on reload.
