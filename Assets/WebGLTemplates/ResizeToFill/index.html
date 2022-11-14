@@ -80,7 +80,7 @@
       }).catch((message) => {
         const unityCrashTime = performance.now();
         const unityCrashPlaytime = unityEndLoadingTime === 0 ? 0 : (unityCrashTime - unityEndLoadingTime) / 1000;
-        ym(window.yandexMetricaCounterId,'reachGoal','unityCrash', { unityCrashPlaytime: unityCrashPlaytime});
+        ym(window.yandexMetricaCounterId,'reachGoal','unityCrash', { unityCrashPlaytime: unityCrashPlaytime });
         alert(message);
       });
     }, 500); // Wait half a second before loading. Makes page more responsive on reload.
