@@ -82,9 +82,9 @@
           ym(window.yandexMetricaCounterId, 'reachGoal', 'unityGameCrash', { unityCrashPlaytime: unityCrashPlaytime });
         };
         ym(window.yandexMetricaCounterId,'reachGoal','unityStart', { unityLoadTime: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
-      }).catch((message) => {
+      }).catch((errorMessage) => {
         ym(window.yandexMetricaCounterId, 'reachGoal', 'unityLoadingCrash');
-        alert(message);
+        alert(errorMessage);
       });
     }, 500); // Wait half a second before loading. Makes page more responsive on reload.
   </script>
