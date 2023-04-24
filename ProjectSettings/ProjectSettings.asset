@@ -529,8 +529,9 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
-    METRICA_COUNTER: 
-    METRICA_COUNTER_ID: 89587935
+    METRICA_COUNTER_ID: 
+    MOBILE_RENDER_SCALE: 
+    RENDER_SCALE: 
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -788,7 +789,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:ResizeToFill
+  webGLTemplate: PROJECT:FullscreenWindow
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 2
