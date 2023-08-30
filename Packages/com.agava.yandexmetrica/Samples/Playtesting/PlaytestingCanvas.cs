@@ -15,6 +15,11 @@ namespace Agava.YandexMetrica.Samples
             YandexMetrica.CallbackLogging = true;
         }
 
+        private void Start()
+        {
+            Debug.Log(YandexMetrica.GetExperiment("flagvalue"));
+        }
+
         public void OnSendButtonClick()
         {
             YandexMetrica.Send(_eventNameField.text, _eventDataField.text);

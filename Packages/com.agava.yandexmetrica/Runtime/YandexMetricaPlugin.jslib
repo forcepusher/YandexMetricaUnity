@@ -7,6 +7,10 @@ const library = {
       const eventDataJson = eventData === '' ? undefined : JSON.parse(eventData);
       ym(window.yandexMetricaCounterId, 'reachGoal', eventName, eventDataJson);
     },
+
+    yandexMetricaGetExperiment: function (flag) {
+      return "test";
+    },
   },
 
   // External C# calls.
@@ -15,6 +19,11 @@ const library = {
     const eventName = UTF8ToString(eventNamePtr);
     const eventData = UTF8ToString(eventDataPtr);
     yandexMetrica.yandexMetricaSend(eventName, eventData);
+  },
+
+  YandexMetricaGetExperiment: function (flagPtr) {
+    const flag = UTF8ToString(flagPtr);
+    return yandexMetrica.yandexMetricaGetExperiment(flag);
   },
 }
 
