@@ -27,5 +27,13 @@ namespace Agava.YandexMetrica
 
         [DllImport("__Internal")]
         private static extern bool YandexMetricaSend(string eventName, string eventData);
+
+        public static string GetExperiment(string flag)
+        {
+            return YandexMetricaGetExperiment(flag);
+        }
+
+        [DllImport("__Internal")]
+        private static extern string YandexMetricaGetExperiment(string flag);
     }
 }
