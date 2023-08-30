@@ -35,7 +35,7 @@
   (window, document, 'script', 'https://abt.s3.yandex.net/expjs/latest/exp.js', 'ymab');
   //ymab('metrika.' + window.yandexMetricaCounterId, 'init'/*, {clientFeatures}, {callback}*/);
   ymab('metrika.' + window.yandexMetricaCounterId, 'init', function (response) {
-    window.yandexabtest = response;
+    window.yandexExperiments = response;
     console.log(response);
   });
   </script>
