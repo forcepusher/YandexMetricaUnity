@@ -9,6 +9,7 @@ const library = {
     },
 
     yandexMetricaGetExperiment: function (flag) {
+      console.log(window.yandexExperiments.flags[flag][0]);
       return yandexMetrica.allocateUnmanagedString('test');
     },
 
