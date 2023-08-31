@@ -9,7 +9,14 @@ const library = {
     },
 
     yandexMetricaGetExperiment: function (flag) {
-      return "test";
+      return yandexMetrica.allocateUnmanagedString('test');
+    },
+
+    allocateUnmanagedString: function (string) {
+      const stringBufferSize = lengthBytesUTF8(string) + 1;
+      const stringBufferPtr = _malloc(stringBufferSize);
+      stringToUTF8(string, stringBufferPtr, stringBufferSize);
+      return stringBufferPtr;
     },
   },
 
