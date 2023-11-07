@@ -17,5 +17,6 @@
       "description": "Template required for Yandex Metrica.",
       "path": "Samples~/WebGLTemplates"
     }
-  ]
+  ],
+  "author": "github.com/forcepusher"
 }
