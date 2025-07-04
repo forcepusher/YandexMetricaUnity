@@ -134,6 +134,7 @@
     const loadingContainer = document.querySelector("#loading-container");
     const dots = document.querySelectorAll(".dot");
 
+    const unityStartLoadingTime = performance.now();
     createUnityInstance(unityCanvas, settings, (progress) => {
       window.unityLoadingProgress = progress;
 
