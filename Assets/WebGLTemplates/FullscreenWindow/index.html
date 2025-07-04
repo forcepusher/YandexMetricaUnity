@@ -170,10 +170,10 @@
 
       window.addEventListener('resize', adjustResolution);
       adjustResolution();
-    }).catch((message) => {
+    }).catch((errorMessage) => {
       ym(window.yandexMetricaCounterId, 'reachGoal', 'unityLoadingCrash', { loadingCrashError: errorMessage });
-      console.error(message);
-      alert(message);
+      console.error(errorMessage);
+      alert(errorMessage);
     });
   </script>
 </body>
