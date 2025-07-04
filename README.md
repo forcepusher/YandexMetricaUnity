@@ -1,7 +1,7 @@
 # YandexMetricaUnity  
   
 This is a development repository. To install the package, use this repo instead:  
-https://github.com/forcepusher/com.agava.yandexmetrica  
+https://github.com/forcepusher/com.bananaparty.yandexmetrica  
   
 To run unit tests: in Unity, go to "Window" -> "General" -> "Test Runner".  
 Make sure your target platform is set to WebGL in build settings.  
