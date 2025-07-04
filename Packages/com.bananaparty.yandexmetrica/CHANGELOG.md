@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed  
 - Changed the package name to a personal brand, since the origin company was dissolved.  
 - Changed the license to a personal brand as well. The license is still MIT.  
+- Updated to a [new shiny template](https://github.com/forcepusher/FullscreenWindowTemplate).  
   
 ## [1.2.1] - 2024-10-30  
 ### Fixed  
