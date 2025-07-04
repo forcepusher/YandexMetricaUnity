@@ -5,6 +5,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>{{{ PRODUCT_NAME }}}</title>
+
+  <script type="text/javascript" >
+    window.yandexMetricaCounterId = {{{ METRICA_COUNTER_ID }}};
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(window.yandexMetricaCounterId, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/{{{ METRICA_COUNTER_ID }}}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <script type="text/javascript" >
+    ym(window.yandexMetricaCounterId,'reachGoal','pageOpen');
+
+    addEventListener('DOMContentLoaded', (event) => {
+      const pageLoadTime = performance.timing.domContentLoadedEventStart - performance.timing.navigationStart;
+      ym(window.yandexMetricaCounterId,'reachGoal','pageLoad', { pageLoadTime: pageLoadTime / 1000 });
+    });
+  </script>
+
   <style>
     .loading-container {
       position: fixed;
@@ -116,6 +147,12 @@
 
       loadingContainer.style.display = "none";
 
+      const unityEndLoadingTime = performance.now();
+      unityInstance.Module.errorHandler = (errorMessage) => {
+        ym(window.yandexMetricaCounterId, 'reachGoal', 'unityGameCrash', { gameCrashError: errorMessage });
+      };
+      ym(window.yandexMetricaCounterId,'reachGoal','unityStart', { unityLoadTime: (unityEndLoadingTime - unityStartLoadingTime) / 1000 });
+
       function adjustResolution() {
         const targetPixelCount = isMobileDevice ? mobilePixelCount : desktopPixelCount;
         const aspectRatio = window.innerWidth / window.innerHeight;
@@ -134,6 +171,7 @@
       window.addEventListener('resize', adjustResolution);
       adjustResolution();
     }).catch((message) => {
+      ym(window.yandexMetricaCounterId, 'reachGoal', 'unityLoadingCrash', { loadingCrashError: errorMessage });
       console.error(message);
       alert(message);
     });
