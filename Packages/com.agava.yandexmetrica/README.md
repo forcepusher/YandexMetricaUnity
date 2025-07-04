@@ -9,4 +9,6 @@ See minimum required Unity version in the `package.json` file.
 Find "Samples" in the package window and click the "Import" button. Use it as a guide.  
   
 Samples also contain WebGL Template required for Yandex Metrica to work.  
-Drag and drop WebGLTemplates folder into Assets and select it in Edit -> Project Settings -> Player -> Resolution and Presentation. Select the template and insert your Yandex Mertica counter id found in the dashboard URL page, such as `https://metrica.yandex.com/dashboard?group=day&period=month&id=89587935` where last numbers is the counter id you're looking for.
+Drag and drop WebGLTemplates folder into Assets and select it in Edit -> Project Settings -> Player -> Resolution and Presentation. Select the template and insert your Yandex Mertica counter id found in the dashboard URL page, such as `https://metrica.yandex.com/dashboard?group=day&period=month&id=89587935` where last numbers is the counter id you're looking for.  
+  
+Also see the [Development Repo](https://github.com/forcepusher/YandexMetricaUnity) if you want to modify this package.
